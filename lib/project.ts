@@ -10,7 +10,7 @@ const project = [
 
     {
         id: 1,
-        title: "Yanks & Brits",
+        title: "Yanks & Brits English Institute",
         country: "Indonesia (Surabaya)",
         src: setiabudi
     },

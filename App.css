@@ -1,0 +1,6 @@
+.floating-whatsapp {
+    position: fixed;
+    top: 20px;     /* Distance from the top of the screen */
+    left: 20px;    /* Distance from the left side of the screen */
+    z-index: 9999;
+  }

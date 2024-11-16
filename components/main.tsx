@@ -1,19 +1,23 @@
+"use client"
+
 import Link from "next/link";
 import Image from "next/image";
+import '@/App.css';
 
 import { service } from "@/lib/service";
 import { process } from "@/lib/process";
 import { project } from "@/lib/project";
 
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+import { testimonial } from "@/lib/testimoni";
+import { AnimatedTestimonials } from "./ui/animated-testimonials";
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
 
 import img1 from "@/public/img-1.svg"
 import like from "@/public/like.svg"
 import medal from "@/public/medal.svg"
 import star from "@/public/star.svg"
 import arrowlong from "@/public/arrowlong.svg"
-import { testimonial } from "@/lib/testimoni";
-import { AnimatedTestimonials } from "./ui/animated-testimonials";
 
 export default function Content() {
     const services = service
@@ -24,34 +28,42 @@ export default function Content() {
     return (
         <>
             <div className="w-11/12 mx-auto">
-                <BackgroundBeamsWithCollision className="flex-col justify-items-center relative z-0 py-20 ">
-                    <h1 className="font-medium text-[56px] text-center z-10">Elevate Your Business's Identity with<br />Our Branding Solutions.</h1>
-                    <p className="text-[#717171] mt-8 text-center text-lg mb-10 z-10">We are an agency committed to developing your big idea into an outstanding digital product.<br />Look at us, meet us, and collaborate with us now. </p>
-                    <Link href={""} className="text-black bg-[#65C8C1] font-medium text-lg px-8 py-3 rounded-full z-50 relative">Contact Us</Link>
-                </BackgroundBeamsWithCollision>
+                <BackgroundBeamsWithCollision className="flex-col justify-items-center relative z-0 lg:py-20 py-10">
+                    <div className="hidden lg:block">
+                        <h1 className="font-medium text-[56px] text-center z-10">Elevate Your Business's Identity with<br />Our Branding Solutions.</h1>
+                    </div>
+                    <div className="lg:hidden">
+                        <h1 className="font-medium text-2xl text-center z-10">Elevate Your Business's Identity with Our Branding Solutions.</h1>
+                    </div>
 
-                {/* <div className="w-full h-[500px] bg-[url('/img.png')] mb-16 rounded-[30px] bg-no-repeat bg-cover relative z-0">
-                </div> */}
+                    <div className="hidden lg:block">
+                        <p className="text-[#717171] mt-8 text-center text-lg mb-10 z-10">We are an agency committed to developing your big idea into an outstanding digital product.<br />Look at us, meet us, and collaborate with us now. </p>
+                    </div>
+
+                    <div className="lg:hidden">
+                        <p className="text-[#717171] mt-4 text-center text-xs lg:mb-10 mb-6 z-10">We are an agency committed to developing your <br /> big idea into an outstanding digital product.</p>
+                    </div>
+
+                    <Link href={""} className="text-black bg-[#65C8C1] font-medium lg:text-lg lg:px-8 px-6 lg:py-2 py-2 rounded-full z-50 relative">Contact Us</Link>
+                </BackgroundBeamsWithCollision>
             </div>
 
-
-
-            <div className="px-10">
-                <div className="bg-[#171717] mb-24 rounded-[30px] bg-[url('/element1.svg')] bg-no-repeat bg-cover">
-                    <div className="py-14 px-12">
-                        <h1 className="text-white text-4xl flex justify-center font-medium mb-20">Take a Look at Our Best Service</h1>
-                        <div className="flex gap-x-20 items-center">
-                            <div className="w-1/2">
+            <div className="lg:px-10 px-4">
+                <div className="bg-[#171717] lg:mb-24 mb-14 rounded-[30px] bg-[url('/element1.svg')] bg-no-repeat bg-cover">
+                    <div className="lg:py-14 py-8 lg:px-12 px-5">
+                        <h1 className="text-white lg:text-4xl text-lg flex justify-center font-medium lg:mb-20 mb-8">Take a Look at Our Best Service</h1>
+                        <div className="lg:flex gap-x-20 items-center">
+                            <div className="lg:w-1/2 mb-10 lg:mb-0">
                                 <Image src={img1} width={1000} alt=""></Image>
                             </div>
-                            <div className="w-1/2">
+                            <div className="lg:w-1/2">
                                 {
                                     services.map((service: any) => (
-                                        <div key={service.id} className="flex mb-12">
-                                            <p className="text-[#65C8C1] text-2xl font-medium me-6">{service.number}</p>
+                                        <div key={service.id} className="flex lg:mb-12 mb-4">
+                                            <p className="text-[#65C8C1] lg:text-2xl text-base font-medium lg:me-6 me-4">{service.number}</p>
                                             <div>
-                                                <h1 className="text-white text-3xl font-medium mb-6">{service.title}</h1>
-                                                <p className="text-white text-lg">
+                                                <h1 className="text-white lg:text-3xl text-lg font-medium lg:mb-6 me-4 mb-3">{service.title}</h1>
+                                                <p className="text-white lg:text-lg text-sm">
                                                     {service.desc}
                                                 </p>
                                             </div>
@@ -64,62 +76,68 @@ export default function Content() {
                 </div>
             </div>
 
-            <div className="w-11/12 mx-auto mb-24">
-                <h1 className="font-medium text-[40px] flex justify-center mb-12">Why They Choose Us</h1>
-                <div className="grid grid-cols-3 gap-6">
-                    <div className="bg-[#F6F7F9] rounded-[30px] flex-col flex items-center py-10 px-20">
+            <div className="lg:w-11/12 lg:mx-auto lg:px-0 px-6 lg:mb-24 mb-16">
+                <h1 className="font-medium lg:text-[40px] text-xl flex justify-center lg:mb-12 mb-8">Why They Choose Us</h1>
+                <div className="lg:grid lg:grid-cols-3 lg:gap-6">
+                    <div className="bg-[#F6F7F9] rounded-[30px] flex-col flex items-center py-10 lg:px-20 px-6 mb-4">
                         <Image src={medal} width={70} alt="" className="bg-black rounded-full py-5 px-5 mb-8"></Image>
-                        <h1 className="text-3xl font-medium mb-5">Give the best</h1>
-                        <p className="text-[#717171] text-center text-lg">Every single creation we offer is meticulously customized to flawlessly align with your brand, target audience, and objectives—without a single exception.</p>
+                        <h1 className="lg:text-3xl text-2xl font-medium mb-5">Give the best</h1>
+                        <p className="text-[#717171] text-center lg:text-lg text-sm">Every single creation we offer is meticulously customized to flawlessly align with your brand, target audience, and objectives without a single exception.</p>
                     </div>
 
-                    <div className="bg-[#F6F7F9] rounded-[30px] flex-col flex items-center py-10 px-20">
+                    <div className="bg-[#F6F7F9] rounded-[30px] flex-col flex items-center py-10 lg:px-20 px-6 mb-4">
                         <Image src={like} width={70} alt="" className="bg-black rounded-full py-5 px-5 mb-8"></Image>
-                        <h1 className="text-3xl font-medium mb-5">Commitment</h1>
-                        <p className="text-[#717171] text-center text-lg">Our unwavering commitment to crafting solutions that resonate with your unique identity, engage your specific audience, and drive your distinct goals.</p>
+                        <h1 className="lg:text-3xl text-2xl font-medium mb-5">Commitment</h1>
+                        <p className="text-[#717171] text-center lg:text-lg text-sm">Our unwavering commitment to crafting solutions that resonate with your unique identity, engage your specific audience, and drive your distinct goals.</p>
                     </div>
 
-                    <div className="bg-[#F6F7F9] rounded-[30px] flex-col flex items-center py-10 px-20">
+                    <div className="bg-[#F6F7F9] rounded-[30px] flex-col flex items-center py-10 lg:px-20 px-6">
                         <Image src={star} width={70} alt="" className="bg-black rounded-full py-5 px-5 mb-8"></Image>
-                        <h1 className="text-3xl font-medium mb-5">Innovation</h1>
-                        <p className="text-[#717171] text-center text-lg">We stay abreast of the latest industry trends and technologies, allowing us to integrate cutting-edge features and functionalities into your website.</p>
+                        <h1 className="lg:text-3xl text-2xl font-medium mb-5">Innovation</h1>
+                        <p className="text-[#717171] text-center lg:text-lg text-sm">We stay abreast of the latest industry trends and technologies, allowing us to integrate cutting-edge features and functionalities into your website.</p>
                     </div>
                 </div>
             </div>
 
-            <div className="w-11/12 mx-auto">
-                <div className="flex flex-col items-center mb-16">
-                    <h1 className="font-medium text-[40px] flex justify-center mb-8">How We Process Your Big Idea</h1>
-                    <p className="text-[#717171] text-center text-lg">Our team will always be willing to hear the big ideas of clients and make it happen with <br />extraordinary solutions according to our clients' wishes.</p>
+            <div className="lg:w-11/12 lg:mx-auto lg:px-0 px-6 lg:mb-24 mb-16">
+                <div className="flex flex-col items-center lg:mb-16 mb-8">
+                    <h1 className="font-medium lg:text-[40px] text-xl flex justify-center mb-4">How We Process Your Big Idea</h1>
+                    <div className="hidden lg:block">
+                        <p className="text-[#717171] text-center text-lg">Our team will always be willing to hear the big ideas of clients and make it happen with <br />extraordinary solutions according to our clients' wishes.</p>
+                    </div>
+
+                    <div className="lg:hidden px-4">
+                        <p className="text-[#717171] text-center text-xs">Our team will always be willing to hear the big ideas of clients and make it happen with extraordinary solutions.</p>
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-6">
+                <div className="lg:grid grid-cols-3 gap-6">
                     {
                         processes.map((process: any) => (
-                            <div key={process.id} className="flex flex-col h-full">
-                                <div className="bg-black py-10 px-14 rounded-[30px] flex-1 hover:bg-[#65C8C1] group">
-                                    <p className="text-white text-[40px] font-medium mb-2 group-hover:text-black">{process.number}</p>
-                                    <h1 className="font-medium text-2xl text-white mb-6 group-hover:text-black">{process.title}</h1>
-                                    <p className="text-white text-lg group-hover:text-black">{process.desc}</p>
+                            <div key={process.id} className="flex flex-col h-full mb-2 lg:mb-0">
+                                <div className="bg-[#171717] lg:py-10 lg:px-14 py-8 px-8 rounded-[30px] flex-1 hover:bg-[#65C8C1] group">
+                                    <p className="text-white lg:text-[40px] text-base font-medium lg:mb-6 mb-2 group-hover:text-black">{process.number}</p>
+                                    <h1 className="font-medium lg:text-2xl text-base text-white lg:mb-6 mb-4 group-hover:text-black text">{process.title}</h1>
+                                    <p className="text-white lg:text-lg text-xs group-hover:text-black text">{process.desc}</p>
                                 </div>
 
                             </div>
                         ))
                     }
-                    <div className="col-span-2 bg-[url('/img.png')] bg-no-repeat bg-cover rounded-[30px]">
+                    <div className="hidden lg:block col-span-2 bg-[url('/img.png')] bg-no-repeat bg-cover rounded-[30px]">
                     </div>
                 </div>
             </div>
 
-            <div className="px-10 mt-24">
-                <div className="bg-[#171717] mb-24 rounded-[30px] bg-[url('/element1.svg')] bg-no-repeat bg-cover">
-                    <div className="py-14 px-20">
-                        <h1 className="text-white text-4xl flex justify-center font-medium mb-20">See Our Professional Project</h1>
-                        <div className="grid grid-cols-3 gap-6">
+            <div className="lg:px-10 px-4 lg:mt-24">
+                <div className="bg-[#171717] lg:mb-24 mb-14 rounded-[30px] bg-[url('/element1.svg')] bg-no-repeat bg-cover">
+                    <div className="lg:py-14 lg:px-20 px-4 py-8">
+                        <h1 className="text-white lg:text-4xl text-lg flex justify-center font-medium lg:mb-20 mb-8">See Our Professional Project</h1>
+                        <div className="lg:grid lg:grid-cols-3 lg:gap-6 grid grid-cols-2 gap-4">
                             {
                                 projects.map((project: any) => (
                                     <div key={project.id} className="flex flex-col h-full">
-                                        <div className="bg-[#262626] py-8 px-8 rounded-[30px] flex-1">
+                                        <div className="bg-[#262626] lg:py-8 lg:px-8 py-4 px-3 lg:rounded-[30px] rounded-[20px] flex-1">
                                             <Image
                                                 src={project.src}
                                                 alt={`job ${project.id}`}
@@ -127,17 +145,17 @@ export default function Content() {
                                                 height={0}
                                                 className="mb-4 rounded-lg"
                                             />
-                                            <p className="text-white text-2xl font-medium mb-2">{project.title}</p>
-                                            <p className="mb-1 text-md text-[#888888]">{project.country}</p>
-                                            <Link href={""} className="text-[#65C8C1] text-lg">Visit site</Link>
+                                            <p className="text-white lg:text-2xl text-sm font-medium mb-2">{project.title}</p>
+                                            <p className="mb-1 lg:text-lg text-xs text-[#888888]">{project.country}</p>
+                                            <Link href={""} className="text-[#65C8C1] lg:text-lg text-sm">Visit site</Link>
                                         </div>
                                     </div>
                                 ))
                             }
                         </div>
-                        <div className="flex justify-center mt-12">
+                        <div className="flex justify-center lg:mt-12 mt-10">
                             <div className="flex items-center border-2 rounded-full py-2 px-6 border-[#65C8C1]">
-                                <Link href={""} className="text-lg text-[#65C8C1] flex">See More <Image src={arrowlong} alt="" className="ms-3" /></Link>
+                                <Link href={""} className="lg:text-lg text-sm text-[#65C8C1] flex">See More <Image src={arrowlong} alt="" className="ms-3" /></Link>
                             </div>
                         </div>
                     </div>
@@ -146,10 +164,26 @@ export default function Content() {
 
             <div className="w-11/12 mx-auto">
                 <div className="flex flex-col items-center mb-16">
-                    <h1 className="font-medium text-[40px] flex justify-center mb-8">What Our Customers Say About Us</h1>
-                    <p className="text-[#717171] text-center text-lg">The following are testimonials and direct reviews from clients who have collaborated with <br /> us. Come collaborate with us now.</p>
+                    <h1 className="font-medium lg:text-[40px] text-xl flex justify-center mb-4">What Our Customers Say About Us</h1>
+                    <div className="hidden lg:block">
+                        <p className="text-[#717171] text-center text-lg">The following are testimonials and direct reviews from clients who have collaborated with <br /> us. Come collaborate with us now.</p>
+                    </div>
+                    <div className="lg:hidden px-4">
+                        <p className="text-[#717171] text-center text-lg text-xs">The following are testimonials and direct reviews from clients who have collaborated with us.</p>
+                    </div>
                 </div>
                 <AnimatedTestimonials testimonials={testimonials} />
+            </div>
+
+            <div className="w-11/12 mx-auto">
+                {/* Floating WhatsApp Button */}
+                <FloatingWhatsApp
+                    phoneNumber="6285928953264"
+                    accountName={"Lumibyte"}
+                    avatar="/avatar.png"
+                    allowEsc
+                    className="floating-whatsapp"
+                />
             </div>
         </>
     );
