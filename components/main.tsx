@@ -2,28 +2,33 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import '@/App.css';
 
 import { service } from "@/lib/service";
 import { process } from "@/lib/process";
 import { project } from "@/lib/project";
+import { brand } from "@/lib/brand";
 
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 import { testimonial } from "@/lib/testimoni";
 import { AnimatedTestimonials } from "./ui/animated-testimonials";
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
+import { useState } from "react";
 
 import img1 from "@/public/img-1.svg"
 import like from "@/public/like.svg"
 import medal from "@/public/medal.svg"
 import star from "@/public/star.svg"
 import arrowlong from "@/public/arrowlong.svg"
+import { div } from "framer-motion/client";
 
 export default function Content() {
     const services = service
     const processes = process
     const projects = project
     const testimonials = testimonial
+    const brands = brand
+
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
         <>
@@ -163,16 +168,42 @@ export default function Content() {
             </div>
 
             <div className="w-11/12 mx-auto">
-                <div className="flex flex-col items-center mb-16">
+                <div className="flex flex-col items-center lg:mb-16 mb-10">
                     <h1 className="font-medium lg:text-[40px] text-xl flex justify-center mb-4">What Our Customers Say About Us</h1>
                     <div className="hidden lg:block">
                         <p className="text-[#717171] text-center text-lg">The following are testimonials and direct reviews from clients who have collaborated with <br /> us. Come collaborate with us now.</p>
                     </div>
                     <div className="lg:hidden px-4">
-                        <p className="text-[#717171] text-center text-lg text-xs">The following are testimonials and direct reviews from clients who have collaborated with us.</p>
+                        <p className="text-[#717171] text-center text-xs">The following are testimonials and direct reviews from clients who have collaborated with us.</p>
                     </div>
                 </div>
                 <AnimatedTestimonials testimonials={testimonials} />
+            </div>
+
+            <div className="w-11/12 mx-auto lg:mt-20 mt-4">
+                <h1 className="font-medium text-xl flex justify-center">Trusted by</h1>
+
+                <div className="overflow-hidden flex items-center lg:mt-10 mt-4">
+                    <div
+                        className="flex lg:space-x-20 space-x-16 items-center lg:py-4 py-2 animate-scroll scroll-wrapper"
+                        style={{
+                            display: 'flex',
+                            whiteSpace: 'nowrap',
+                            width: 'calc(100% * 3)'
+                        }}
+                    >
+                        {[...brands, ...brands, ...brands].map((logo, index) => (
+                            <div key={index} className="flex-shrink-0 hover:scale-105 transition-transform duration-300">
+                                <Image
+                                    src={logo.src}
+                                    alt={`Logo ${logo.id}`}
+                                    height={0}
+                                    className="grayscale hover:grayscale-0 transition-all duration-300 lg:w-[150px] w-[80px]"
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
 
             <div className="w-11/12 mx-auto">
@@ -185,6 +216,22 @@ export default function Content() {
                     className="floating-whatsapp"
                 />
             </div>
+            <style jsx>
+                {`
+                    @keyframes scroll {
+                        0% {
+                            transform: translateX(0);
+                        }
+                        100% {
+                            transform: translateX(-100%);
+                        }
+                    }
+
+                    .animate-scroll {
+                            animation: scroll 30s linear infinite;
+                    }              
+               `}
+            </style>
         </>
     );
 }
