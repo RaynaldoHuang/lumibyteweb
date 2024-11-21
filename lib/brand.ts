@@ -26,18 +26,6 @@ const brand = [
         id: 5,
         src: skyview
     },
-    {
-        id: 6,
-        src: google
-    },
-    {
-        id: 7,
-        src: google
-    },
-    {
-        id: 8,
-        src: google
-    },
 ]
 
 export { brand }

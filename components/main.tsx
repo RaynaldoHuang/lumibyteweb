@@ -11,15 +11,13 @@ import { brand } from "@/lib/brand";
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 import { testimonial } from "@/lib/testimoni";
 import { AnimatedTestimonials } from "./ui/animated-testimonials";
-import { FloatingWhatsApp } from 'react-floating-whatsapp'
-import { useState } from "react";
 
 import img1 from "@/public/img-1.svg"
 import like from "@/public/like.svg"
 import medal from "@/public/medal.svg"
 import star from "@/public/star.svg"
 import arrowlong from "@/public/arrowlong.svg"
-import { div } from "framer-motion/client";
+import Whatsapp from "./whatsapp";
 
 export default function Content() {
     const services = service
@@ -27,8 +25,6 @@ export default function Content() {
     const projects = project
     const testimonials = testimonial
     const brands = brand
-
-    const [isHovered, setIsHovered] = useState(false);
 
     return (
         <>
@@ -49,11 +45,11 @@ export default function Content() {
                         <p className="text-[#717171] mt-4 text-center text-xs lg:mb-10 mb-6 z-10">We are an agency committed to developing your <br /> big idea into an outstanding digital product.</p>
                     </div>
 
-                    <Link href={""} className="text-black bg-[#65C8C1] font-medium lg:text-lg lg:px-8 px-6 lg:py-2 py-2 rounded-full z-50 relative">Contact Us</Link>
+                    <Link href={"https://wa.me/6285928953264"} className="text-black bg-[#65C8C1] font-medium lg:text-lg lg:px-8 px-6 lg:py-2 py-2 rounded-full z-50 relative">Contact Us</Link>
                 </BackgroundBeamsWithCollision>
             </div>
 
-            <div className="lg:px-10 px-4">
+            <div id="services" className="lg:px-10 px-4">
                 <div className="bg-[#171717] lg:mb-24 mb-14 rounded-[30px] bg-[url('/element1.svg')] bg-no-repeat bg-cover">
                     <div className="lg:py-14 py-8 lg:px-12 px-5">
                         <h1 className="text-white lg:text-4xl text-lg flex justify-center font-medium lg:mb-20 mb-8">Take a Look at Our Best Service</h1>
@@ -134,13 +130,13 @@ export default function Content() {
                 </div>
             </div>
 
-            <div className="lg:px-10 px-4 lg:mt-24">
+            <div id="project" className="lg:px-10 px-4 lg:mt-24">
                 <div className="bg-[#171717] lg:mb-24 mb-14 rounded-[30px] bg-[url('/element1.svg')] bg-no-repeat bg-cover">
-                    <div className="lg:py-14 lg:px-20 px-4 py-8">
+                    <div className="lg:py-14 lg:px-28 px-4 py-8">
                         <h1 className="text-white lg:text-4xl text-lg flex justify-center font-medium lg:mb-20 mb-8">See Our Professional Project</h1>
                         <div className="lg:grid lg:grid-cols-3 lg:gap-6 grid grid-cols-2 gap-4">
                             {
-                                projects.map((project: any) => (
+                                projects.slice(0,6).map((project: any) => (
                                     <div key={project.id} className="flex flex-col h-full">
                                         <div className="bg-[#262626] lg:py-8 lg:px-8 py-4 px-3 lg:rounded-[30px] rounded-[20px] flex-1">
                                             <Image
@@ -152,7 +148,7 @@ export default function Content() {
                                             />
                                             <p className="text-white lg:text-2xl text-sm font-medium mb-2">{project.title}</p>
                                             <p className="mb-1 lg:text-lg text-xs text-[#888888]">{project.country}</p>
-                                            <Link href={""} className="text-[#65C8C1] lg:text-lg text-sm">Visit site</Link>
+                                            <Link href={project.link} className="text-[#65C8C1] lg:text-lg text-sm">Visit site</Link>
                                         </div>
                                     </div>
                                 ))
@@ -160,7 +156,7 @@ export default function Content() {
                         </div>
                         <div className="flex justify-center lg:mt-12 mt-10">
                             <div className="flex items-center border-2 rounded-full py-2 px-6 border-[#65C8C1]">
-                                <Link href={""} className="lg:text-lg text-sm text-[#65C8C1] flex">See More <Image src={arrowlong} alt="" className="ms-3" /></Link>
+                                <Link href={"/projects"} className="lg:text-lg text-sm text-[#65C8C1] flex">See More <Image src={arrowlong} alt="" className="ms-3" /></Link>
                             </div>
                         </div>
                     </div>
@@ -180,8 +176,8 @@ export default function Content() {
                 <AnimatedTestimonials testimonials={testimonials} />
             </div>
 
-            <div className="w-11/12 mx-auto lg:mt-20 mt-4">
-                <h1 className="font-medium text-xl flex justify-center">Trusted by</h1>
+            <div className="w-11/12 mx-auto lg:mt-20">
+                <h1 className="font-medium lg:text-xl text-lg flex justify-center">Trusted by</h1>
 
                 <div className="overflow-hidden flex items-center lg:mt-10 mt-4">
                     <div
@@ -206,16 +202,8 @@ export default function Content() {
                 </div>
             </div>
 
-            <div className="w-11/12 mx-auto">
-                {/* Floating WhatsApp Button */}
-                <FloatingWhatsApp
-                    phoneNumber="6285928953264"
-                    accountName={"Lumibyte"}
-                    avatar="/avatar.png"
-                    allowEsc
-                    className="floating-whatsapp"
-                />
-            </div>
+            <Whatsapp />
+
             <style jsx>
                 {`
                     @keyframes scroll {
