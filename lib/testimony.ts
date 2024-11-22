@@ -1,4 +1,4 @@
-import cust1 from "@/public/cust1.svg"
+import cust1 from "@/public/svgs/cust1.svg"
 
 const testimonial = [
     {

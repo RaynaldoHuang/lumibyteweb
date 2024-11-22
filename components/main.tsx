@@ -3,20 +3,20 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { service } from "@/lib/service";
-import { process } from "@/lib/process";
-import { project } from "@/lib/project";
-import { brand } from "@/lib/brand";
+import { service } from "@/lib/services";
+import { process } from "@/lib/processes";
+import { project } from "@/lib/projects";
+import { brand } from "@/lib/brands";
+import { testimonial } from "@/lib/testimony";
 
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
-import { testimonial } from "@/lib/testimoni";
 import { AnimatedTestimonials } from "./ui/animated-testimonials";
 
-import img1 from "@/public/img-1.svg"
-import like from "@/public/like.svg"
-import medal from "@/public/medal.svg"
-import star from "@/public/star.svg"
-import arrowlong from "@/public/arrowlong.svg"
+import img1 from "@/public/svgs/img-1.svg"
+import like from "@/public/svgs/like.svg"
+import medal from "@/public/svgs/medal.svg"
+import star from "@/public/svgs/star.svg"
+import arrowlong from "@/public/svgs/arrowlong.svg"
 import Whatsapp from "./whatsapp";
 
 export default function Content() {
@@ -116,12 +116,11 @@ export default function Content() {
                     {
                         processes.map((process: any) => (
                             <div key={process.id} className="flex flex-col h-full mb-2 lg:mb-0">
-                                <div className="bg-[#171717] lg:py-10 lg:px-14 py-8 px-8 rounded-[30px] flex-1 hover:bg-[#65C8C1] group">
+                                <div className="bg-[#171717] lg:py-10 lg:px-14 py-8 px-8 rounded-[30px] flex-1 hover:bg-[#65C8C1] group hover:cursor-pointer">
                                     <p className="text-white lg:text-[40px] text-base font-medium lg:mb-6 mb-2 group-hover:text-black">{process.number}</p>
                                     <h1 className="font-medium lg:text-2xl text-base text-white lg:mb-6 mb-4 group-hover:text-black text">{process.title}</h1>
                                     <p className="text-white lg:text-lg text-xs group-hover:text-black text">{process.desc}</p>
                                 </div>
-
                             </div>
                         ))
                     }

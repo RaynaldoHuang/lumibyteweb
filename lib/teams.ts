@@ -1,6 +1,6 @@
-import raynaldo from "@/public/raynaldo.png"
-import randy from "@/public/randy.jpg"
-import winsten from "@/public/winsten.jpg"
+import raynaldo from "@/public/images/raynaldo.png"
+import randy from "@/public/images/randy.jpg"
+import winsten from "@/public/images/winsten.jpg"
 
 const team = [
     {

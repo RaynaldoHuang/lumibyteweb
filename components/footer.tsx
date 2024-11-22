@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import logo from "@/public/logo.svg"
+import logo from "@/public/svgs/logo.svg"
 
 export default function Footer() {
     return (
@@ -52,28 +52,28 @@ export default function Footer() {
                         <div>
                             <h1 className="text-white font-medium lg:text-2xl text-sm">Menu</h1>
                             <div className="flex flex-col lg:mt-6 mt-3 gap-y-2">
-                                <Link href={""} className="text-[#B8B8B8] lg:text-lg text-xs">Home</Link>
-                                <Link href={"#services"} className="text-[#B8B8B8] lg:text-lg text-xs">Services</Link>
-                                <Link href={"#project"} className="text-[#B8B8B8] lg:text-lg text-xs">Project</Link>
-                                <Link href={""} className="text-[#B8B8B8] lg:text-lg text-xs">About Us</Link>
+                                <Link href={""} className="text-[#B8B8B8] lg:text-lg text-xs  hover:text-[#65C8C1]">Home</Link>
+                                <Link href={"#services"} className="text-[#B8B8B8] lg:text-lg text-xs hover:text-[#65C8C1]">Services</Link>
+                                <Link href={"#project"} className="text-[#B8B8B8] lg:text-lg text-xs hover:text-[#65C8C1]">Project</Link>
+                                <Link href={""} className="text-[#B8B8B8] lg:text-lg text-xs hover:text-[#65C8C1]">About Us</Link>
                             </div>
                         </div>
 
                         <div>
                             <h1 className="text-white font-medium lg:text-2xl text-sm">Services</h1>
                             <div className="flex flex-col lg:mt-6 mt-3 gap-y-2">
-                                <Link href={"#services"} className="text-[#B8B8B8] lg:text-lg text-xs">UI / UX Web and Mobile Design</Link>
-                                <Link href={"#services"} className="text-[#B8B8B8] lg:text-lg text-xs">Mobile Development</Link>
-                                <Link href={"#services"} className="text-[#B8B8B8] lg:text-lg text-xs">Landing Page</Link>
-                                <Link href={"#services"} className="text-[#B8B8B8] lg:text-lg text-xs">Website Application</Link>
-                                <Link href={"#services"} className="text-[#B8B8B8] lg:text-lg text-xs">Tech Workshop</Link>
+                                <Link href={"#services"} className="text-[#B8B8B8] lg:text-lg text-xs hover:text-[#65C8C1]">UI / UX Web and Mobile Design</Link>
+                                <Link href={"#services"} className="text-[#B8B8B8] lg:text-lg text-xs hover:text-[#65C8C1]">Mobile Development</Link>
+                                <Link href={"#services"} className="text-[#B8B8B8] lg:text-lg text-xs hover:text-[#65C8C1]">Landing Page</Link>
+                                <Link href={"#services"} className="text-[#B8B8B8] lg:text-lg text-xs hover:text-[#65C8C1]">Website Application</Link>
+                                <Link href={"#services"} className="text-[#B8B8B8] lg:text-lg text-xs hover:text-[#65C8C1]">Tech Workshop</Link>
                             </div>
                         </div>
 
                         <div>
                             <h1 className="text-white font-medium lg:text-2xl text-sm">Social Media</h1>
                             <div className="flex lg:mt-6 mt-3 gap-y-2 items-center gap-x-3">
-                                <Link href={"https://www.instagram.com/lumibyte.id/"} className="text-[#B8B8B8] lg:text-lg text-xs">Instagram</Link>
+                                <Link href={"https://www.instagram.com/lumibyte.id/"} className="text-[#B8B8B8] lg:text-lg text-xs hover:text-[#65C8C1]">Instagram</Link>
                             </div>
                         </div>
                     </div>

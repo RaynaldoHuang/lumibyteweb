@@ -1,7 +1,7 @@
-import setiabudi from "@/public/skyviewsetiabudi.png"
-import ansama from "@/public/ansama.png"
-import yanks from "@/public/yanksnbrits.png"
-import sugarbaby from "@/public/sugarbabyy.png"
+import setiabudi from "@/public/images/skyviewsetiabudi.png"
+import ansama from "@/public/images/ansama.png"
+import yanks from "@/public/images/yanksnbrits.png"
+import sugarbaby from "@/public/images/sugarbabyy.png"
 
 const project = [
     {

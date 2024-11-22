@@ -1,6 +1,6 @@
 "use client"
 
-import logo from "@/public/logo.svg"
+import logo from "@/public/svgs/logo.svg"
 
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ export default function Navigationbar() {
                         <div>
                             <Link href={"/"} className="text-white pe-16 text-lg">Home</Link>
                             <Link href={"/projects"} className="text-white pe-16 text-lg">Project</Link>
-                            <Link href={"/aboutus"} className="text-white pe-16 text-lg">About Us</Link>
+                            <Link href={"/about-us"} className="text-white pe-16 text-lg">About Us</Link>
                             <Link href={"#contact"} className="text-white pe-16 text-lg">Contact</Link>
                         </div>
                         {/* <Link href={""} className="text-black bg-[#65C8C1] font-medium text-lg px-8 py-2 rounded-full me-5">Login</Link> */}
@@ -78,7 +78,7 @@ export default function Navigationbar() {
                                 Project
                             </Link>
                             <Link
-                                href="/aboutus"
+                                href="/about-us"
                                 className="text-gray-300 hover:bg-[#65C8C1] hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                             >
                                 About Us

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { project } from "@/lib/project";
+import { project } from "@/lib/projects";
 import Whatsapp from "@/components/whatsapp";
 
 export default function Projects() {

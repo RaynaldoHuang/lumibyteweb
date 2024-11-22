@@ -1,9 +1,9 @@
-import yanks from "@/public/yanks.svg"
-import google from "@/public/google.svg"
-import tamo from "@/public/tamo.svg"
-import sugarbaby from "@/public/sugarbaby.svg"
-import ansama from "@/public/ansama.svg"
-import skyview from "@/public/skyview.svg"
+import yanks from "@/public/svgs/yanks.svg"
+import google from "@/public/svgs/google.svg"
+import tamo from "@/public/svgs/tamo.svg"
+import sugarbaby from "@/public/svgs/sugarbaby.svg"
+import ansama from "@/public/svgs/ansama.svg"
+import skyview from "@/public/svgs/skyview.svg"
 
 const brand = [
     {
