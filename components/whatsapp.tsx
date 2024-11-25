@@ -8,7 +8,7 @@ export default function Whatsapp() {
                 <FloatingWhatsApp
                     phoneNumber="6285928953264"
                     accountName={"Lumibyte"}
-                    avatar="/avatar.png"
+                    avatar="/images/avatar.png"
                     allowEsc
                     className="floating-whatsapp"
                 />
